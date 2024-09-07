@@ -1,11 +1,266 @@
+/* General reset and body styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Courier;
 }
-html, 
+
 body {
-    height: 100%;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+/* Navigation bar styles */
+nav {
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-color: black;
+}
+
+.nav-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #b74b4b;
+    text-shadow: 0 0 5px #b74b4b; /* Adjusted blur effect */
+    margin-left: 7px; /* Adjust this value for spacing */
+}
+
+/* Links section */
+.links {
+    display: flex;
+    align-items: center;
+}
+
+.link a {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.link a:hover {
+    color: #b74b4b;
+}
+
+.link a::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #b74b4b;
+    transition: 0.3s ease;
+}
+
+.link a:hover::before {
     width: 100%;
 }
+
+/* Social links section */
+.social-links {
+    display: flex; 
+    justify-content: flex-start; /* Align social links to start */
+    align-items: center;
+    gap: 15px; 
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: 0.2rem solid #b74b4b;
+    border-radius: 50%;
+    color: #b74b4b;
+    transition: 0.2s linear;
+}
+
+.social-links a i {
+    font-size: 1.5rem;
+}
+
+.social-links a:hover {
+    background-color: #b74b4b;
+    color: black;
+    filter: drop-shadow(0 0 10px #b74b4b);
+}
+
+/* Main content container */
+.main-cointainer {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main-cointainer .image {
+    width: 500px;
+    height: 80vh;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 50px #b74b4b;
+}
+
+.main-cointainer .image .img {
+    width: 100%;
+    height: 100%; /* Ensures the image fills the container */
+    object-fit: cover; /* Ensures proper scaling of the image */
+}
+
+.main-cointainer .image:hover {
+    animation: animate 1.5s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.05;
+    }
+    100% {
+        scale: 1;
+    }
+}
+
+/* Content section */
+.main-cointainer .content {
+    color: white;
+    width: 40%;
+    min-height: 100px;
+}
+
+.content h1 {
+    font-size: clamp(1rem, 1rem + 5vw, 1.8rem); /* Normal font size for "Hey I'm Mayank" */
+}
+
+.content h1 span {
+    color: #b74b4b;
+    text-shadow: 0 0 5px #b74b4b;
+}
+
+/* Typewriter effect for "I'am a Developer" */
+.typewriter {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem; /* Larger font size */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.typewriter span {
+    color: #b74b4b; /* New color for "Developer" */
+    margin-left: 10px; /* Adjust the space as needed */
+}
+
+/* Paragraph styling */
+.content p {
+    font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
+    margin: 10px 0;
+}
+
+/* Button styles */
+.content button {
+    width: 50%;
+    height: 6vh;
+    margin: 30px;
+    background-color: #b74b4b;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 120%;
+    font-weight: 700;
+    border-radius: 11px;
+    transition: 0.2s linear;
+}
+
+.content button:hover {
+    scale: 1.1;
+    color: #b74b4b;
+    border: 2px solid #b74b4b;
+    background-color: transparent;
+    box-shadow: 0 0 40px #b74b4b;
+}
+
+/* Responsive media queries */
+@media(max-width: 884px) {
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    .main-cointainer {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main-cointainer .content {
+        width: 80%;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .main-cointainer .image {
+        width: 60%;
+        height: 40%;
+    }
+}
+
+@media(max-width: 440px) {
+    .main-cointainer .image {
+        width: 50%;
+        height: 40%;
+    }
+
+    .main-cointainer .content {
+        width: 80%;
+    }
+
+    .main-cointainer button {
+        margin-top: 15px;
+    }
+
+    .social-links a {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
