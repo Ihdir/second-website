@@ -254,6 +254,28 @@ nav {
     }
 }
 
+.typewriter {
+    display: inline-block;
+    font-size: 2.5rem; /* Adjust as needed */
+    font-weight: bold;
+    position: relative;
+    overflow: hidden; /* Ensures text does not overflow */
+    white-space: nowrap;
+}
+
+.typewriter-text {
+    display: inline;
+    border-right: 0.15em solid #b74b4b; /* Cursor effect */
+    padding-right: 5px;
+    animation: blinkCursor 0.75s step-end infinite;
+}
+
+@keyframes blinkCursor {
+    from, to { border-color: transparent }
+    50% { border-color: #b74b4b; }
+}
+
+
 
 
 
